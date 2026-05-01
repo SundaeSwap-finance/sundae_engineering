@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-04-30T18:47:26Z",
+  "title": "Design System: Sundae Engineering",
+  "extensions": {
+    "colorMeta": {
+      "surface-base": {
+        "role": "neutral",
+        "displayName": "Base Graphite",
+        "canonical": "oklch(0.175 0.011 248)",
+        "tonalRamp": [
+          "oklch(0.15 0.011 248)",
+          "oklch(0.2 0.011 248)",
+          "oklch(0.3 0.011 248)",
+          "oklch(0.4 0.011 248)",
+          "oklch(0.5 0.011 248)",
+          "oklch(0.65 0.011 248)",
+          "oklch(0.8 0.011 248)",
+          "oklch(0.92 0.011 248)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Operational Amber",
+        "canonical": "oklch(0.79 0.145 71)",
+        "tonalRamp": [
+          "oklch(0.22 0.145 71)",
+          "oklch(0.3 0.145 71)",
+          "oklch(0.4 0.145 71)",
+          "oklch(0.52 0.145 71)",
+          "oklch(0.64 0.145 71)",
+          "oklch(0.74 0.145 71)",
+          "oklch(0.84 0.135 71)",
+          "oklch(0.93 0.09 71)"
+        ]
+      },
+      "stroke-strong": {
+        "role": "secondary",
+        "displayName": "Review-Line Steel",
+        "canonical": "oklch(0.47 0.014 248)",
+        "tonalRamp": [
+          "oklch(0.2 0.014 248)",
+          "oklch(0.28 0.014 248)",
+          "oklch(0.36 0.014 248)",
+          "oklch(0.47 0.014 248)",
+          "oklch(0.57 0.014 248)",
+          "oklch(0.68 0.014 248)",
+          "oklch(0.8 0.012 248)",
+          "oklch(0.91 0.01 248)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Condensed Display",
+        "purpose": "Hero and section statements"
+      },
+      "body": {
+        "displayName": "Operational Body",
+        "purpose": "Technical explanation and context"
+      },
+      "label": {
+        "displayName": "Tracked Labels",
+        "purpose": "Status metadata and control labels"
+      }
+    },
+    "shadows": [
+      {
+        "name": "no-shadow-baseline",
+        "value": "none",
+        "purpose": "Default flat posture across panels and controls"
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "150ms ease-out",
+        "purpose": "Subtle hover/focus response"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main conversion action used for email outreach.",
+      "html": "<button class=\"ds-btn-primary\">EMAIL US</button>",
+      "css": ".ds-btn-primary { background: var(--accent); color: var(--ink); border: 1px solid var(--accent); border-radius: 2px; padding: 12px 24px; font-family: Barlow, Segoe UI, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background-color 150ms ease-out; } .ds-btn-primary:hover { background: var(--accent-soft); } .ds-btn-primary:focus-visible { outline: 2px solid color-mix(in oklab, var(--accent) 68%, white); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Supporting action for anchor navigation.",
+      "html": "<button class=\"ds-btn-secondary\">CONTACT FORM</button>",
+      "css": ".ds-btn-secondary { background: var(--surface-raised); color: var(--text-primary); border: 1px solid var(--stroke-strong); border-radius: 2px; padding: 12px 24px; font-family: Barlow, Segoe UI, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: border-color 150ms ease-out, color 150ms ease-out; } .ds-btn-secondary:hover { border-color: var(--accent); color: var(--accent); } .ds-btn-secondary:focus-visible { outline: 2px solid color-mix(in oklab, var(--accent) 68%, white); outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "Form field for outreach brief collection.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">WORK EMAIL</span><input class=\"ds-input\" type=\"email\" placeholder=\"you@company.com\" /></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font-family: Barlow, Segoe UI, sans-serif; } .ds-field-label { color: var(--text-muted); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; } .ds-input { width: 100%; background: var(--surface-raised); color: var(--text-primary); border: 1px solid var(--stroke-strong); border-radius: 2px; padding: 10px 12px; font-family: Barlow, Segoe UI, sans-serif; font-size: 1rem; line-height: 1.5; } .ds-input::placeholder { color: var(--text-muted); } .ds-input:focus-visible { outline: 2px solid color-mix(in oklab, var(--accent) 68%, white); outline-offset: 2px; border-color: var(--accent); }"
+    },
+    {
+      "name": "Raised Panel",
+      "kind": "card",
+      "refersTo": "panel-default",
+      "description": "Structured container for profile and summary data.",
+      "html": "<section class=\"ds-panel\"><p class=\"ds-panel-label\">OPERATING PROFILE</p><p class=\"ds-panel-text\">Senior operators on each engagement.</p></section>",
+      "css": ".ds-panel { background: var(--surface-raised); color: var(--text-primary); border: 1px solid var(--stroke-strong); border-radius: 2px; padding: 24px; font-family: Barlow, Segoe UI, sans-serif; } .ds-panel-label { margin: 0 0 10px 0; color: var(--text-muted); font-size: 0.625rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; } .ds-panel-text { margin: 0; font-size: 1rem; line-height: 1.6; }"
+    },
+    {
+      "name": "Sticky Navigation",
+      "kind": "nav",
+      "refersTo": "panel-default",
+      "description": "Top-level bar with identity and always-available CTA.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">SUNDAE ENGINEERING</span><a class=\"ds-nav-cta\" href=\"mailto:hello@sundae.engineering\">EMAIL US</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border: 1px solid var(--stroke-subtle); background: color-mix(in oklab, var(--surface-raised) 88%, transparent); font-family: Barlow, Segoe UI, sans-serif; } .ds-nav-brand { color: var(--text-primary); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; } .ds-nav-cta { display: inline-block; border: 1px solid var(--accent); border-radius: 2px; background: var(--accent); color: var(--ink); padding: 10px 16px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background-color 150ms ease-out; } .ds-nav-cta:hover { background: var(--accent-soft); } .ds-nav-cta:focus-visible { outline: 2px solid color-mix(in oklab, var(--accent) 68%, white); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Institutional Signal, Operator Clarity",
+    "overview": "This design language behaves like a technical briefing surface. It uses controlled dark neutrals, strict borders, and concise typography to communicate operational competence to engineering leaders. Accent color remains scarce and conversion-focused, preserving trust and hierarchy.",
+    "keyCharacteristics": [
+      "High information clarity",
+      "Disciplined accent usage",
+      "Flat-by-default depth model",
+      "Persistent, direct outreach pathways"
+    ],
+    "rules": [
+      {
+        "name": "Accent Scarcity Rule",
+        "body": "Accent is for actions and high-intent links, not ambient decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "Flat-by-Default Rule",
+        "body": "Structure is conveyed through tone and stroke before shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep CTA endpoints visible in repeated, predictable locations.",
+      "Do preserve high-contrast text and explicit focus indicators.",
+      "Do keep message hierarchy concise and technically specific."
+    ],
+    "donts": [
+      "Don't resemble crypto or blockchain marketing language or visuals.",
+      "Don't use neon accents, speculative motifs, token metaphors, or hype styling.",
+      "Don't use gradient text, heavy glass effects, or decorative side-stripe accents."
+    ]
+  }
+}

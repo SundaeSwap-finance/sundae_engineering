@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Sundae Engineering Logo</title>
+  <desc id="desc">A layered orange icon resembling a stacked sundae.</desc>
+  <rect width="128" height="128" rx="24" fill="#0a0a0a"/>
+  <path d="M18 94h92l-10 20H28L18 94z" fill="#f97316"/>
+  <path d="M26 74h76c2.4 0 4.4 2.2 3.8 4.6L100 94H28l-5.8-15.4c-.6-2.4 1.4-4.6 3.8-4.6z" fill="#fb923c"/>
+  <path d="M40 48c0-13.3 10.7-24 24-24s24 10.7 24 24v6H40v-6z" fill="#fdba74"/>
+  <circle cx="64" cy="24" r="10" fill="#f97316"/>
+</svg>
