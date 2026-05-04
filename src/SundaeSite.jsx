@@ -2,19 +2,19 @@ import React from "react";
 
 const deliveryPrinciples = [
   {
-    label: "MODE",
-    value: "MISSION_CRITICAL",
-    detail: "Production systems with real users and strict uptime expectations.",
+    label: "Resilience-first architecture",
+    value: "Designed for uptime under pressure",
+    detail: "Redundancy, observability, and graceful degradation are scoped from day one.",
   },
   {
-    label: "PRIORITY",
-    value: "SECURITY_FIRST",
-    detail: "Secure, high-availability architectures designed for real-world constraints.",
+    label: "Security built into delivery",
+    value: "No bolt-on compliance theater",
+    detail: "Access boundaries, audit trails, and threat modeling are integrated into implementation.",
   },
   {
-    label: "ARCHITECTURE",
-    value: "FAILURE_AWARE",
-    detail: "Distributed systems expertise with observability and fault isolation.",
+    label: "AI acceleration with guardrails",
+    value: "Higher velocity without quality drift",
+    detail: "AI is used intentionally with review standards, test rigor, and human accountability.",
   },
 ];
 
@@ -96,15 +96,15 @@ export default function SundaeSite() {
       </header>
 
       <main>
-        <section className="px-5 pb-14 pt-16 sm:px-8 sm:pt-20">
-          <div className="mx-auto grid w-full max-w-[1120px] gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-            <div className="space-y-6">
-              <p className="font-['Barlow_Condensed'] text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Built for technical decision makers</p>
+        <section className="px-5 pb-24 pt-20 sm:px-8 sm:pb-28 sm:pt-28">
+          <div className="mx-auto grid w-full max-w-[1120px] gap-14 lg:min-h-[68vh] lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+            <div className="space-y-8">
+              <p className="font-['Barlow_Condensed'] text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Built for CTOs and VP Engineering</p>
               <h1 className="max-w-[18ch] font-['Barlow_Condensed'] text-5xl font-semibold uppercase leading-[0.95] text-[var(--text-primary)] sm:text-6xl">
-                Engineering for Systems That Cannot Fail.
+                We Build Systems That Cannot Fail.
               </h1>
               <p className="max-w-[58ch] text-base leading-7 text-[var(--text-secondary)]">
-                We design and build secure, high-availability software for companies operating under real-world
+                We design and build secure, high-availability software for teams operating under serious
                 constraints.
               </p>
               <div className="flex flex-wrap gap-3">
@@ -123,25 +123,25 @@ export default function SundaeSite() {
               </div>
             </div>
 
-            <aside className="border border-[var(--stroke-strong)] bg-[var(--surface-raised)] p-6">
-              <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Availability Index</p>
+            <aside className="border border-[var(--stroke-strong)] bg-[var(--surface-raised)] p-8">
+              <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Where We Add the Most Value</p>
               <dl className="space-y-4 text-sm">
                 <div className="grid grid-cols-[8.5rem_1fr] gap-3 border-b border-[var(--stroke-subtle)] pb-3">
-                  <dt className="uppercase tracking-[0.08em] text-[var(--text-muted)]">availability.index</dt>
-                  <dd className="text-[var(--text-primary)]">operational</dd>
+                  <dt className="uppercase tracking-[0.08em] text-[var(--text-muted)]">Context</dt>
+                  <dd className="text-[var(--text-primary)]">Revenue-critical products</dd>
                 </div>
                 <div className="grid grid-cols-[8.5rem_1fr] gap-3 border-b border-[var(--stroke-subtle)] pb-3">
-                  <dt className="uppercase tracking-[0.08em] text-[var(--text-muted)]">risk.profile</dt>
-                  <dd className="text-[var(--text-primary)]">controlled</dd>
+                  <dt className="uppercase tracking-[0.08em] text-[var(--text-muted)]">Need</dt>
+                  <dd className="text-[var(--text-primary)]">Reliability and security at scale</dd>
                 </div>
                 <div className="grid grid-cols-[8.5rem_1fr] gap-3 border-b border-[var(--stroke-subtle)] pb-3">
-                  <dt className="uppercase tracking-[0.08em] text-[var(--text-muted)]">delivery.mode</dt>
-                  <dd className="text-[var(--text-primary)]">senior-led</dd>
+                  <dt className="uppercase tracking-[0.08em] text-[var(--text-muted)]">Constraint</dt>
+                  <dd className="text-[var(--text-primary)]">High cost of downtime or defects</dd>
                 </div>
                 <div className="grid grid-cols-[8.5rem_1fr] gap-3">
-                  <dt className="uppercase tracking-[0.08em] text-[var(--text-muted)]">system.design</dt>
+                  <dt className="uppercase tracking-[0.08em] text-[var(--text-muted)]">Approach</dt>
                   <dd>
-                    <span className="font-semibold text-[var(--accent)]">failure-aware</span>
+                    <span className="font-semibold text-[var(--accent)]">AI-accelerated engineering with guardrails</span>
                   </dd>
                 </div>
               </dl>
@@ -149,15 +149,18 @@ export default function SundaeSite() {
           </div>
         </section>
 
-        <section className="border-y border-[var(--stroke-subtle)] bg-[var(--surface-deep)] px-5 py-14 sm:px-8">
+        <section className="border-y border-[var(--stroke-subtle)] bg-[var(--surface-deep)] px-5 py-20 sm:px-8 sm:py-24">
           <div className="mx-auto w-full max-w-[1120px]">
-            <h2 className="mb-8 font-['Barlow_Condensed'] text-3xl font-semibold uppercase tracking-[0.03em] text-[var(--text-primary)]">
+            <h2 className="mb-10 font-['Barlow_Condensed'] text-3xl font-semibold uppercase tracking-[0.03em] text-[var(--text-primary)]">
               Delivery System
             </h2>
-            <div className="grid gap-8 lg:grid-cols-3">
+            <p className="mb-10 max-w-[64ch] text-sm leading-7 text-[var(--text-secondary)]">
+              We own AI usage directly. It speeds delivery, but never replaces engineering judgment.
+            </p>
+            <div className="grid gap-10 lg:grid-cols-3">
               {deliveryPrinciples.map((item) => (
                 <article key={item.label} className="space-y-3 border border-[var(--stroke-strong)] bg-[var(--surface-raised)] p-6">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">{item.label}</p>
+                  <p className="text-[10px] uppercase tracking-[0.13em] text-[var(--text-muted)]">{item.label}</p>
                   <p className="text-lg font-semibold leading-7 text-[var(--text-primary)]">{item.value}</p>
                   <p className="text-sm leading-6 text-[var(--text-secondary)]">{item.detail}</p>
                 </article>
@@ -166,12 +169,12 @@ export default function SundaeSite() {
           </div>
         </section>
 
-        <section className="px-5 py-16 sm:px-8">
+        <section className="px-5 py-24 sm:px-8 sm:py-28">
           <div className="mx-auto w-full max-w-[1120px]">
-            <h2 className="mb-8 font-['Barlow_Condensed'] text-3xl font-semibold uppercase tracking-[0.03em] text-[var(--text-primary)]">
+            <h2 className="mb-10 font-['Barlow_Condensed'] text-3xl font-semibold uppercase tracking-[0.03em] text-[var(--text-primary)]">
               Case Study: Real-Time Financial System Under Load
             </h2>
-            <p className="mb-8 max-w-[66ch] text-sm leading-7 text-[var(--text-secondary)]">
+            <p className="mb-10 max-w-[66ch] text-sm leading-7 text-[var(--text-secondary)]">
               A production system required continuous uptime while processing high-frequency transactions under
               unpredictable load conditions. Downtime or inconsistency would result in immediate financial impact.
             </p>
@@ -186,8 +189,8 @@ export default function SundaeSite() {
           </div>
         </section>
 
-        <section id="contact" className="border-t border-[var(--stroke-subtle)] bg-[var(--surface-deep)] px-5 py-16 sm:px-8">
-          <div className="mx-auto grid w-full max-w-[1120px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <section id="contact" className="border-t border-[var(--stroke-subtle)] bg-[var(--surface-deep)] px-5 py-24 sm:px-8 sm:py-28">
+          <div className="mx-auto grid w-full max-w-[1120px] gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div className="space-y-5">
               <p className="font-['Barlow_Condensed'] text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Primary call to action</p>
               <h2 className="max-w-[20ch] font-['Barlow_Condensed'] text-4xl font-semibold uppercase leading-[0.95] text-[var(--text-primary)] sm:text-5xl">
@@ -203,7 +206,7 @@ export default function SundaeSite() {
               </p>
             </div>
 
-            <form className="grid gap-4 border border-[var(--stroke-strong)] bg-[var(--surface-raised)] p-6" onSubmit={handleContactSubmit}>
+            <form className="grid gap-5 border border-[var(--stroke-strong)] bg-[var(--surface-raised)] p-8" onSubmit={handleContactSubmit}>
               <label className="grid gap-2 text-sm" htmlFor="name">
                 <span className="uppercase tracking-[0.08em] text-[var(--text-muted)]">Name</span>
                 <input
@@ -260,7 +263,7 @@ export default function SundaeSite() {
         </section>
       </main>
 
-      <footer className="border-t border-[var(--stroke-subtle)] px-5 py-7 text-xs text-[var(--text-muted)] sm:px-8">
+      <footer className="border-t border-[var(--stroke-subtle)] px-5 py-10 text-xs text-[var(--text-muted)] sm:px-8">
         <div className="mx-auto flex w-full max-w-[1120px] flex-wrap items-center justify-between gap-3">
           <p>Systems designed to perform when it matters most.</p>
           <p className="uppercase tracking-[0.12em] text-[var(--text-secondary)]">SUNDAE_ENGINEERING / STATUS: READY</p>
