@@ -5,8 +5,8 @@ This repo packages the existing `sundae_engineering.js` concept into a runnable 
 ## Quick start
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 Local dev server runs on `http://localhost:4317`.
@@ -14,8 +14,8 @@ Local dev server runs on `http://localhost:4317`.
 ## Build
 
 ```bash
-npm run build
-npm run preview
+bun run build
+bun run preview
 ```
 
 Preview server runs on `http://localhost:4318`.
