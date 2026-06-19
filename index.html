@@ -3,11 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sundae Engineering</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Sundae Engineering — secure, high-availability systems</title>
+    <meta
+      name="description"
+      content="Sundae Engineering designs and builds secure, high-availability software for teams where downtime or a defect carries real cost. Senior engineering, limited engagements."
+    />
+    <meta name="theme-color" content="#f8f5ef" />
+    <link rel="icon" type="image/svg+xml" href="/sundae-mark.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sundae Engineering" />
+    <meta
+      property="og:description"
+      content="Secure, high-availability software for teams where downtime is a revenue event. Senior engineering, limited engagements."
+    />
+    <meta property="og:image" content="/sundae-mark.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sundae Engineering" />
+    <meta
+      name="twitter:description"
+      content="Secure, high-availability software for teams where downtime is a revenue event."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500;600&display=swap"
+    />
   </head>
   <body>
     <div id="root"></div>
+
+    <!--
+      Static form so Netlify's build-time form detection registers the
+      contact form. The live React form (same name + fields) submits to it
+      via fetch. If Forms is not enabled, the visible email remains the
+      always-available fallback.
+    -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

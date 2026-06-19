@@ -1,52 +1,57 @@
 ---
 name: Sundae Engineering
-description: Institutional-grade engineering landing system for high-stakes technical buyers.
+description: Editorial engineering landing system — warm paper, Geist type, one amber accent, for high-stakes technical buyers.
 colors:
-  surface-base: "oklch(0.175 0.011 248)"
-  surface-deep: "oklch(0.155 0.011 248)"
-  surface-raised: "oklch(0.22 0.014 248)"
-  stroke-subtle: "oklch(0.33 0.012 248)"
-  stroke-strong: "oklch(0.47 0.014 248)"
-  text-primary: "oklch(0.93 0.006 248)"
-  text-secondary: "oklch(0.81 0.006 248)"
-  text-muted: "oklch(0.66 0.007 248)"
+  surface-base: "oklch(0.984 0.004 95)"
+  surface-deep: "oklch(0.968 0.006 88)"
+  surface-raised: "oklch(0.998 0.002 95)"
+  stroke-subtle: "oklch(0.9 0.006 90)"
+  stroke-strong: "oklch(0.82 0.008 85)"
+  text-primary: "oklch(0.25 0.012 65)"
+  text-secondary: "oklch(0.42 0.012 65)"
+  text-muted: "oklch(0.52 0.012 70)"
   accent: "oklch(0.79 0.145 71)"
-  accent-soft: "oklch(0.85 0.126 76)"
-  ink: "oklch(0.21 0.012 248)"
+  accent-soft: "oklch(0.9 0.1 84)"
+  accent-ink: "oklch(0.47 0.15 50)"
+  ink: "oklch(0.2 0.012 65)"
+  ink-contrast: "oklch(0.97 0.004 95)"
 typography:
   display:
-    fontFamily: "Barlow Condensed, Barlow, Segoe UI, sans-serif"
-    fontSize: "clamp(3rem, 6.5vw, 4.5rem)"
+    fontFamily: "Geist, Inter, sans-serif"
+    fontSize: "clamp(2.75rem, 6.5vw, 5rem)"
     fontWeight: 600
-    lineHeight: 0.95
-    letterSpacing: "0.03em"
+    lineHeight: 1.03
+    letterSpacing: "-0.01em"
   headline:
-    fontFamily: "Barlow Condensed, Barlow, Segoe UI, sans-serif"
-    fontSize: "1.875rem"
+    fontFamily: "Geist, Inter, sans-serif"
+    fontSize: "clamp(2.25rem, 4vw, 3rem)"
     fontWeight: 600
-    lineHeight: 1.1
-    letterSpacing: "0.03em"
+    lineHeight: 1.05
+    letterSpacing: "-0.01em"
   title:
-    fontFamily: "Barlow, Segoe UI, sans-serif"
-    fontSize: "1.125rem"
+    fontFamily: "Geist, Inter, sans-serif"
+    fontSize: "1.25rem"
     fontWeight: 600
-    lineHeight: 1.35
-    letterSpacing: "0.02em"
+    lineHeight: 1.3
+    letterSpacing: "-0.01em"
   body:
-    fontFamily: "Barlow, Segoe UI, sans-serif"
-    fontSize: "1rem"
+    fontFamily: "Geist, Segoe UI, sans-serif"
+    fontSize: "1.125rem"
     fontWeight: 400
-    lineHeight: 1.75
+    lineHeight: 1.78
     letterSpacing: "0"
   label:
-    fontFamily: "Barlow, Segoe UI, sans-serif"
-    fontSize: "0.75rem"
+    fontFamily: "Geist Mono, ui-monospace, monospace"
+    fontSize: "0.72rem"
     fontWeight: 600
     lineHeight: 1.2
-    letterSpacing: "0.12em"
+    letterSpacing: "0.16em"
 rounded:
-  control: "2px"
-  focus-chip: "6px"
+  sm: "4px"
+  control: "8px"
+  button: "8px"
+  card: "8px"
+  full: "9999px"
 spacing:
   xxs: "8px"
   xs: "12px"
@@ -56,147 +61,151 @@ spacing:
   xl: "56px"
 components:
   button-primary:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.control}"
-    padding: "12px 24px"
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.ink-contrast}"
+    typography: "{typography.body}"
+    rounded: "{rounded.button}"
+    padding: "13px 22px"
   button-primary-hover:
-    backgroundColor: "{colors.accent-soft}"
-    textColor: "{colors.ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.control}"
-    padding: "12px 24px"
+    backgroundColor: "oklch(0.3 0.012 65)"
+    textColor: "{colors.ink-contrast}"
+    typography: "{typography.body}"
+    rounded: "{rounded.button}"
+    padding: "13px 22px"
   button-secondary:
-    backgroundColor: "{colors.surface-raised}"
+    backgroundColor: "transparent"
     textColor: "{colors.text-primary}"
-    typography: "{typography.label}"
-    rounded: "{rounded.control}"
-    padding: "12px 24px"
+    border: "1px solid {colors.stroke-strong}"
+    typography: "{typography.body}"
+    rounded: "{rounded.button}"
+    padding: "13px 22px"
   panel-default:
     backgroundColor: "{colors.surface-raised}"
     textColor: "{colors.text-primary}"
-    rounded: "{rounded.control}"
-    padding: "24px"
+    border: "1px solid {colors.stroke-subtle}"
+    rounded: "{rounded.card}"
+    padding: "28px"
   input-default:
     backgroundColor: "{colors.surface-raised}"
     textColor: "{colors.text-primary}"
     typography: "{typography.body}"
-    rounded: "{rounded.control}"
-    padding: "10px 12px"
+    rounded: "{rounded.button}"
+    padding: "11px 14px"
 ---
 
 # Design System: Sundae Engineering
 
 ## 1. Overview
 
-**Creative North Star: "Institutional Signal, Operator Clarity"**
+**Creative North Star: "Institutional Editorial"**
 
-This system is built to feel like a technical briefing, not a campaign page. The visual language prioritizes operational trust: restrained dark neutrals, strict border discipline, high-contrast typography, and direct calls to action. Every section should feel reviewable by a CTO in under a minute.
+This system reads like a serious engineering studio's editorial feature, not a campaign page. It sets Geist — a precise geometric sans — across display and body on warm paper, holds to strict hairline structure, and reserves a single amber accent for the one phrase that carries each section. Every section should still be reviewable by a CTO in under a minute.
 
-The composition uses controlled density instead of visual spectacle. Information is grouped into concise blocks, with explicit labels and predictable rhythm. Accent color is reserved for intent and conversion actions, so attention lands where outreach should happen.
+The composition uses confident typographic scale and generous whitespace instead of dense panels. Information is grouped into a small number of editorial blocks — a headline, a marked phrase, a short proof — with predictable rhythm and one primary conversion path.
 
-The system explicitly rejects crypto and blockchain marketing cues. No neon glow language, speculative motifs, token metaphors, or futuristic hype treatments.
+The register stays serious. This is the deliberate inverse of consumer-AI playfulness: **no mascots, no cute voice, no per-page color characters.** The presence comes from confident type, paper, and whitespace — not from illustration. It still explicitly rejects crypto and blockchain marketing cues.
 
 Key Characteristics:
-- High signal, low ornament surfaces
-- Strong typographic hierarchy with compact uppercase labels
+- Warm-paper canvas with hairline-led structure
+- Large Geist display, set in sentence case
+- A single amber "marker" highlight, one phrase per section
 - Deliberate conversion path anchored to email outreach
-- Border-led structure instead of decorative card theatrics
+- High signal, low ornament — credibility before charm
 
 ## 2. Colors
 
-The palette is a disciplined dark-spectrum system with a single warm accent reserved for action.
+A warm-paper light system with near-black ink and one amber accent reserved for emphasis and action.
 
 ### Primary
-- **Operational Amber** (oklch(0.79 0.145 71)): Primary CTA fill and high-intent interaction emphasis.
+- **Operational Amber** (oklch(0.79 0.145 71)): The brand mark, status dot, and the marker-highlight source tone.
+- **Marker Wash** (oklch(0.9 0.1 84)): The highlighter background behind ink for the one key phrase per section.
 
 ### Secondary
-- **Review-Line Steel** (oklch(0.47 0.014 248)): Strong border and separation role for structure.
+- **Burnt Amber / Accent Ink** (oklch(0.47 0.15 50)): Text links and section indices. Chosen dark enough to clear WCAG AA on paper; always paired with an underline on links.
 
-### Tertiary
-- **Raised Slate** (oklch(0.22 0.014 248)): Elevated panels, forms, and content blocks that need containment.
+### Surfaces
+- **Warm Paper** (oklch(0.984 0.004 95)): Root page background.
+- **Faint Band** (oklch(0.968 0.006 88)): Section bands that segment the page.
+- **Lifted White** (oklch(0.998 0.002 95)): Cards, panels, and form fields raised above paper.
 
-### Neutral
-- **Base Graphite** (oklch(0.175 0.011 248)): Root page surface and body background.
-- **Deep Graphite** (oklch(0.155 0.011 248)): Band backgrounds that segment major sections.
-- **Primary Text Mist** (oklch(0.93 0.006 248)): Main text color.
-- **Secondary Text Mist** (oklch(0.81 0.006 248)): Supporting copy for body and details.
-- **Muted Text Mist** (oklch(0.66 0.007 248)): Labels and metadata.
+### Ink & Text
+- **Control Ink** (oklch(0.2 0.012 65)): Primary button fill and the top status bar.
+- **Primary Text** (oklch(0.25 0.012 65)): Headlines and ink.
+- **Secondary Text** (oklch(0.42 0.012 65)): Body and supporting copy.
+- **Muted Text** (oklch(0.52 0.012 70)): Labels and metadata.
 
 ### Named Rules
-**The Accent Scarcity Rule.** Accent tones are reserved for conversion actions, status markers, and key interactive anchors. Neutrals carry structure.
+**The Accent Scarcity Rule.** Amber is reserved for the brand mark, status, link text, and exactly one marker-highlighted phrase per section. Structure is carried by ink and hairlines, never by accent fills.
+
+**The One-Marker Rule.** Each major section gets at most one `.marker` highlight, placed on the phrase that carries the section's claim (e.g. *stay up*, *architecture*, *without taking them down*). More than one and the emphasis flattens.
 
 ## 3. Typography
 
-**Display Font:** Barlow Condensed (fallback to Barlow, then Segoe UI sans-serif)
-**Body Font:** Barlow (fallback to Segoe UI sans-serif)
-**Label/Mono Font:** Barlow labels in uppercase tracking, no separate mono family
+**Display Font:** Geist (fallback Inter, then system sans) — 600 for the hero H1 and section headlines, set in **sentence case**.
+**Body Font:** Geist — the same family at 400 keeps dense technical copy legible under the large display weights.
+**Metadata/Mono Font:** Geist Mono — reserved for *genuine* metadata only: section indices (`01 / …`), the availability status, eyebrow labels, and form field labels. Never decorative buzzwords or faux-terminal strings.
 
-**Character:** Condensed display cuts deliver serious, finance-adjacent authority. Body typography remains straightforward and readable under dense technical messaging.
+**Character:** Geist's geometric precision gives the page a confident, technical authority without shouting; the single family across display and body keeps it cohesive; the mono cut earns the engineering register by labelling real structure. The system reads "precise engineering studio," not "template."
 
 ### Hierarchy
-- **Display** (600, clamp(3rem, 6.5vw, 4.5rem), 0.95): Hero statements and high-importance section headlines.
-- **Headline** (600, 1.875rem, 1.1): Section titles and thematic dividers.
-- **Title** (600, 1.125rem, 1.35): Short subheaders and card-level emphasis.
-- **Body** (400, 1rem, 1.75): Explanatory copy with max line lengths around 58ch.
-- **Label** (600, 0.75rem, 0.12em tracking, uppercase): Metadata, control labels, and operational tags.
+- **Display** (600, clamp(2.75rem, 6.5vw, 5rem), 1.03): Hero statement and the highest-importance section headlines.
+- **Headline** (600, clamp(2.25rem, 4vw, 3rem), 1.05): Section titles.
+- **Title** (600, 1.25rem): Card and row-level emphasis (principle terms, step names).
+- **Body** (400, 1.125rem, 1.78): Explanatory copy, measure held to ~52–62ch.
+- **Label** (600, 0.72rem, 0.16em tracking, uppercase mono): Metadata, eyebrows, and field labels.
 
 ### Named Rules
-**The Technical Readability Rule.** Long-form copy stays at body scale with generous line height and constrained measure, even in dark mode contexts.
+**The Sentence-Case Display Rule.** Geist display headings are sentence case so weight and scale carry authority without shouting. Uppercase + wide tracking is reserved exclusively for the mono metadata tier.
+
+**The Technical Readability Rule.** Long-form copy stays at body scale with generous line height and a constrained measure (~52–62ch), even beside large display type.
 
 ## 4. Elevation
 
-This system is mostly flat, using tonal layering and border contrast as the primary depth language. Surfaces are separated by shifts in neutral value and stroke intensity instead of shadow-heavy lift effects.
-
-### Shadow Vocabulary
-- **No-shadow baseline** (`box-shadow: none`): Default state for panels, fields, and content sections.
+Mostly flat. Depth comes from the paper → lifted-white tonal step and hairline borders, not shadow.
 
 ### Named Rules
-**The Flat-by-Default Rule.** Structural differentiation comes from tone and stroke, not ambient glow or decorative blur.
+**The Hairline-First Rule.** Structural separation comes from tone (paper vs. faint band vs. lifted white) and 1px strokes — not ambient shadow or glow.
 
 ## 5. Components
 
 ### Buttons
-- **Shape:** Tight, squared controls (2px radius) to keep the interface precise.
-- **Primary:** Accent fill with dark ink text, uppercase label styling, medium horizontal padding.
-- **Hover / Focus:** Hover shifts to softer accent. Focus remains high-visibility through explicit outlines.
-- **Secondary:** Raised neutral background with strong border and text-primary foreground.
+- **Shape:** Conformed 8px radius, sentence case, body font.
+- **Primary:** Solid ink fill with paper-light text — the highest-contrast element on the page.
+- **Secondary:** Transparent with a strong hairline; border darkens to ink on hover.
+- **Focus:** Visible 2px accent-ink outline with offset.
 
-### Chips
-- **Style:** Status and metadata chips are label-text treatments, not pill-heavy decorative badges.
-- **State:** Color escalation is reserved for active status or conversion context.
+### Marker Highlight
+- **Style:** A clean amber wash (`accent-soft`) behind ink, 4px radius (`--radius-sm`), `box-decoration-break: clone` so it wraps cleanly across lines.
+- **Use:** One phrase per section. Never on a full sentence, never more than once per section.
 
 ### Cards / Containers
-- **Corner Style:** Tight radius (2px) with hard borders.
-- **Background:** Raised slate surfaces over darker section bands.
-- **Shadow Strategy:** Flat baseline with border-driven separation.
-- **Border:** Subtle and strong stroke tiers by information priority.
-- **Internal Padding:** 24px canonical interior spacing.
+- **Corner Style:** Conformed 8px radius with hairline (`stroke-subtle`) borders.
+- **Background:** Lifted white over paper or faint-band sections.
+- **Shadow Strategy:** Flat; border-driven separation.
 
 ### Inputs / Fields
-- **Style:** Raised neutral background, strong stroke boundary, body-size text.
-- **Focus:** Explicit 2px accent-adjacent outline plus border-color shift.
-- **Error / Disabled:** Reserve for future extension, preserve contrast and clarity.
+- **Style:** Lifted-white background, strong hairline, body-size text, conformed 8px radius.
+- **Labels:** Mono uppercase metadata tier.
+- **Focus:** Border shifts to accent-ink with a soft amber ring (`box-shadow`).
 
 ### Navigation
-- **Style:** Sticky top bar with muted backdrop, explicit boundary line, and always-available contact actions.
-- **States:** CTA buttons use accent progression; secondary actions gain accent on hover.
-- **Mobile:** CTA remains visible while secondary form link collapses on smaller widths.
+- **Style:** Sticky translucent paper bar with a hairline base. In-page links sit in a hairline-bordered cluster at the conformed 8px radius; the primary `Hire us` action stays solid ink and always visible.
+- **Top Strip:** A slim ink bar frames the page top with availability status and the outreach address.
 
 ### Signature Component
-- **Operational Profile Panel:** A definition-list style summary block with concise delivery parameters and primary outreach address.
+- **Marked Section Headline:** A large Geist section headline with exactly one amber-marked phrase, preceded by a mono `index + label` pair (`01 / How we engineer`).
 
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** keep primary outreach visible in header, hero, and footer using `hello@sundae.engineering`.
-- **Do** use neutral layered surfaces (`surface-base`, `surface-deep`, `surface-raised`) with stroke-led separation.
-- **Do** keep large messaging in condensed uppercase display styles and body text under ~65ch.
-- **Do** use clear focus styling with visible outlines and keyboard-reachable actions.
+- **Do** keep primary outreach visible in the top strip, header, hero, contact, and footer using `hello@sundae.engineering`.
+- **Do** use the paper → faint-band → lifted-white tonal steps with hairline separation.
+- **Do** set display headings in sentence-case Geist and hold body copy to ~52–62ch.
+- **Do** use exactly one marker highlight per section, on the phrase that carries the claim.
+- **Do** keep link text on the darker accent-ink with an underline for AA contrast.
 
 ### Don't:
-- **Don't** resemble crypto or blockchain marketing: no neon palettes, speculative language, token/chain metaphors, or futuristic hype visuals.
-- **Don't** use gradient text, glassmorphism defaults, or decorative side-stripe accent borders.
-- **Don't** convert every information block into identical icon cards.
-- **Don't** dilute CTA emphasis by using accent color as a general-purpose decoration.
+- **Don't** add mascots, illustrated characters, or a cute/playful voice — the warmth is typographic, the register stays serious.
+- **Don't** resemble crypto or blockchain marketing: no neon palettes, speculative language, or hype visuals.
+- **Don't** use gradient text, glassmorphism, or drop shadows for separation.
+- **Don't** spend amber as general decoration or stack multiple markers — it dilutes both emphasis and the conversion path.
