@@ -6,24 +6,24 @@ const fitSignals = [
   "Re-architecting a system that has outgrown its first design",
   "Hardening a product ahead of an enterprise security review",
   "Adding observability after silent failures in production",
-  "Raising delivery speed without lowering the quality bar",
+  "Shipping faster without lowering the quality bar",
 ];
 
 const deliveryPrinciples = [
   {
     term: "Resilience by design",
     detail:
-      "Redundancy, observability, and graceful degradation are scoped from day one, not retrofitted after the first incident.",
+      "Redundancy, observability, and graceful degradation are scoped on day one — not retrofitted after the first outage.",
   },
   {
     term: "Security in the build, not the review",
     detail:
-      "Access boundaries, audit trails, and threat modeling are part of implementation, not a compliance pass bolted on at the end.",
+      "Access boundaries, audit trails, and threat modeling are part of implementation — not a compliance pass bolted on before launch.",
   },
   {
     term: "AI with a human accountable",
     detail:
-      "We use AI to move faster, behind the same review standards, test rigor, and human sign-off as everything else we ship.",
+      "We use AI to move faster, under the same review, test, and sign-off standards as everything else we ship. A person owns every line.",
   },
 ];
 
@@ -36,12 +36,12 @@ const workSteps = [
   {
     term: "Change it under load",
     detail:
-      "We work in small, reversible steps behind redundancy and observability, so the system keeps serving traffic while it is re-architected underneath.",
+      "We work in small, reversible steps behind redundancy and observability, so the system keeps serving traffic the entire time it is being rebuilt.",
   },
   {
     term: "Leave it measurable",
     detail:
-      "You keep the instrumentation, runbooks, and tests to read the system's health and catch the next regression yourselves, not a dependency on us.",
+      "You keep the instrumentation, runbooks, and tests to watch the system and catch the next regression yourselves — not a standing dependency on us.",
   },
 ];
 
@@ -112,11 +112,11 @@ function ContactForm() {
         <span className="status-dot" aria-hidden="true" />
         <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-fg">Brief received.</h3>
         <p className="mt-3 max-w-[46ch] leading-7 text-fg-secondary">
-          Thanks. We have it, and will reply from{" "}
+          We&rsquo;ve got it. You&rsquo;ll hear back from a person at{" "}
           <a className="font-medium text-accent hover:text-accent-soft" href={`mailto:${CONTACT_EMAIL}`}>
             {CONTACT_EMAIL}
           </a>
-          . You can reach us there directly any time.
+          , not an autoresponder &mdash; and you can reach us there directly any time.
         </p>
       </div>
     );
@@ -259,8 +259,8 @@ export default function SundaeSite() {
                 We build systems that <span className="text-accent">stay up</span> under load, failure, and attack.
               </h1>
               <p className="max-w-[56ch] text-lg leading-8 text-fg-secondary">
-                Sundae Engineering designs and builds secure, high-availability software for teams operating under
-                serious constraints, where the cost of a failure is measured in revenue, not inconvenience.
+                We design and build secure, high-availability software that holds when load spikes, a dependency fails,
+                or someone goes looking for a way in.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">
@@ -292,10 +292,11 @@ export default function SundaeSite() {
           <div className="mx-auto w-full max-w-content">
             <SectionMark index="01" label="How we engineer" />
             <h2 className="mt-6 max-w-[22ch] font-display text-3xl font-bold tracking-tight text-fg sm:text-5xl">
-              Reliability and security are decisions made early.
+              Reliability and security are architecture, not a final pass.
             </h2>
             <p className="mt-5 max-w-[64ch] text-lg leading-8 text-fg-secondary">
-              We own how AI is used in our work. It speeds delivery; it never replaces engineering judgment.
+              The failures that take a system down in production are rarely new. They&rsquo;re the ones no one designed
+              for. We design for them first.
             </p>
             <dl className="mt-12 divide-y divide-stroke-subtle border-y border-stroke-subtle">
               {deliveryPrinciples.map((item) => (
@@ -335,8 +336,8 @@ export default function SundaeSite() {
                 Tell us what can&rsquo;t go down.
               </h2>
               <p className="max-w-[44ch] text-lg leading-8 text-fg-secondary">
-                We take on a small number of engagements at a time. If your system can&rsquo;t afford to fail, tell us
-                what you&rsquo;re building and where the risk is, or email us directly at{" "}
+                We take on a small number of engagements at a time. Tell us what you&rsquo;re building, where the risk
+                is, and the timeline you&rsquo;re working against &mdash; or email us directly at{" "}
                 <a className="font-medium text-accent hover:text-accent-soft" href={`mailto:${CONTACT_EMAIL}`}>
                   {CONTACT_EMAIL}
                 </a>
