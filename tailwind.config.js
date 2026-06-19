@@ -11,11 +11,12 @@ export default {
         accent: {
           DEFAULT: "var(--accent)",
           soft: "var(--accent-soft)",
+          ink: "var(--accent-ink)",
         },
         stroke: {
           subtle: "var(--stroke-subtle)",
           DEFAULT: "var(--stroke-strong)",
-          field: "var(--stroke-field)",
+          field: "var(--stroke-strong)",
         },
         fg: {
           DEFAULT: "var(--text-primary)",
@@ -24,21 +25,28 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Barlow Condensed"', '"Barlow"', '"Segoe UI"', "sans-serif"],
-        sans: ['"Barlow"', '"Segoe UI"', "sans-serif"],
-        mono: ['"IBM Plex Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
+        // Geist for display + body, Geist Mono for genuine metadata.
+        display: ['"Geist"', '"Inter"', '"Segoe UI"', "sans-serif"],
+        sans: ['"Geist"', '"Segoe UI"', "sans-serif"],
+        mono: ['"Geist Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },
       letterSpacing: {
-        // Three deliberate steps, not the prior ad-hoc spread of six values.
-        tight: "0.01em", // display headings
-        cta: "0.1em", // buttons / interactive labels
-        label: "0.18em", // uppercase metadata (mono indices, status)
+        tight: "-0.01em", // display headings
+        cta: "0", // editorial buttons sit in normal case
+        label: "0.16em", // uppercase mono metadata
       },
       maxWidth: {
         content: "1120px",
       },
       borderRadius: {
-        control: "2px",
+        // One conformed radius for all box UI; full reserved for the status dot.
+        none: "0",
+        sm: "4px",
+        DEFAULT: "8px",
+        control: "8px",
+        btn: "8px",
+        card: "8px",
+        full: "9999px",
       },
     },
   },

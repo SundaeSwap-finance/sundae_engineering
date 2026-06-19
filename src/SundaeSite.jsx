@@ -51,18 +51,9 @@ function Mark({ className = "" }) {
 
 function SectionMark({ index, label }) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="mono-label text-accent">{index}</span>
+    <div className="flex items-baseline gap-4">
+      <span className="font-display text-2xl font-semibold leading-none text-accent-ink">{index}</span>
       <span className="mono-label text-fg-muted">{label}</span>
-    </div>
-  );
-}
-
-function BriefingRow({ term, children }) {
-  return (
-    <div className="grid gap-1.5 py-6 md:grid-cols-[16rem_1fr] md:items-baseline md:gap-10">
-      <dt className="font-display text-lg font-semibold tracking-tight text-fg">{term}</dt>
-      <dd className="max-w-[64ch] leading-7 text-fg-secondary">{children}</dd>
     </div>
   );
 }
@@ -108,12 +99,12 @@ function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div ref={successRef} tabIndex={-1} className="panel rounded-control p-8" role="status" aria-live="polite">
+      <div ref={successRef} tabIndex={-1} className="panel rounded-card p-8" role="status" aria-live="polite">
         <span className="status-dot" aria-hidden="true" />
-        <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-fg">Brief received.</h3>
+        <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-fg">Brief received.</h3>
         <p className="mt-3 max-w-[46ch] leading-7 text-fg-secondary">
           We&rsquo;ve got it. You&rsquo;ll hear back from a person at{" "}
-          <a className="font-medium text-accent hover:text-accent-soft" href={`mailto:${CONTACT_EMAIL}`}>
+          <a className="link-accent" href={`mailto:${CONTACT_EMAIL}`}>
             {CONTACT_EMAIL}
           </a>
           , not an autoresponder &mdash; and you can reach us there directly any time.
@@ -131,7 +122,7 @@ function ContactForm() {
       data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
-      className="panel grid gap-5 rounded-control p-8"
+      className="panel grid gap-5 rounded-card p-8"
     >
       <input type="hidden" name="form-name" value="contact" />
       <p className="hidden" aria-hidden="true">
@@ -140,16 +131,16 @@ function ContactForm() {
         </label>
       </p>
 
-      <label className="grid gap-2 text-sm" htmlFor="name">
-        <span className="text-fg-secondary">
-          Name <span className="text-fg-muted">(required)</span>
+      <label className="grid gap-2" htmlFor="name">
+        <span className="mono-label text-fg-muted">
+          Name <span className="font-normal normal-case tracking-normal">(required)</span>
         </span>
         <input id="name" name="name" autoComplete="name" required aria-required="true" className="field-input" />
       </label>
 
-      <label className="grid gap-2 text-sm" htmlFor="email">
-        <span className="text-fg-secondary">
-          Work email <span className="text-fg-muted">(required)</span>
+      <label className="grid gap-2" htmlFor="email">
+        <span className="mono-label text-fg-muted">
+          Work email <span className="font-normal normal-case tracking-normal">(required)</span>
         </span>
         <input
           id="email"
@@ -162,14 +153,14 @@ function ContactForm() {
         />
       </label>
 
-      <label className="grid gap-2 text-sm" htmlFor="company">
-        <span className="text-fg-secondary">Company</span>
+      <label className="grid gap-2" htmlFor="company">
+        <span className="mono-label text-fg-muted">Company</span>
         <input id="company" name="company" autoComplete="organization" className="field-input" />
       </label>
 
-      <label className="grid gap-2 text-sm" htmlFor="message">
-        <span className="text-fg-secondary">
-          Project brief <span className="text-fg-muted">(required)</span>
+      <label className="grid gap-2" htmlFor="message">
+        <span className="mono-label text-fg-muted">
+          Project brief <span className="font-normal normal-case tracking-normal">(required)</span>
         </span>
         <textarea
           id="message"
@@ -180,7 +171,7 @@ function ContactForm() {
           aria-describedby="message-hint"
           className="field-input resize-y"
         />
-        <span id="message-hint" className="text-sm text-fg-muted">
+        <span id="message-hint" className="text-sm leading-6 text-fg-muted">
           What the system does, where the risk is, and the timeline you are working against.
         </span>
       </label>
@@ -188,7 +179,7 @@ function ContactForm() {
       {status === "error" ? (
         <p role="alert" className="text-sm leading-6 text-fg-secondary">
           Something went wrong submitting the form. Please email us directly at{" "}
-          <a className="font-medium text-accent hover:text-accent-soft" href={`mailto:${CONTACT_EMAIL}`}>
+          <a className="link-accent" href={`mailto:${CONTACT_EMAIL}`}>
             {CONTACT_EMAIL}
           </a>
           .
@@ -216,129 +207,171 @@ export default function SundaeSite() {
     <div className="min-h-screen bg-base text-fg">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-control focus:bg-raised focus:px-4 focus:py-2 focus:text-sm"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-btn focus:bg-raised focus:px-4 focus:py-2 focus:text-sm"
       >
         Skip to main content
       </a>
 
-      <div className="border-b border-stroke-subtle bg-deep px-5 py-2.5 sm:px-8">
+      <div className="bg-ink px-5 py-2.5 sm:px-8">
         <div className="mx-auto flex w-full max-w-content items-center justify-between gap-4">
-          <p className="mono-label flex items-center gap-2.5 text-fg-secondary">
+          <p className="mono-label flex items-center gap-2.5 text-[var(--ink-contrast-muted)]">
             <span className="status-dot" aria-hidden="true" />
             Available for select engagements
           </p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="mono-label text-fg-muted transition-colors hover:text-accent">
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="mono-label text-[var(--ink-contrast-muted)] transition-colors hover:text-accent"
+          >
             {CONTACT_EMAIL}
           </a>
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 border-b border-stroke-subtle bg-deep px-5 py-4 sm:px-8">
+      <header className="sticky top-0 z-50 border-b border-stroke-subtle bg-[var(--surface-base-trans)] px-5 py-4 backdrop-blur sm:px-8">
         <div className="mx-auto flex w-full max-w-content items-center justify-between gap-5">
-          <a href="/" className="flex items-center gap-3" aria-label="Sundae Engineering, home">
-            <Mark className="h-9 w-9" />
+          <a href="/" className="flex items-center gap-2.5" aria-label="Sundae Engineering, home">
+            <Mark className="h-8 w-8" />
             <span className="font-display text-xl font-semibold tracking-tight text-fg">Sundae Engineering</span>
           </a>
-          <div className="flex items-center gap-3">
-            <a href="#contact" className="btn btn-ghost hidden sm:inline-flex">
+          <nav
+            className="nav-pill hidden items-center gap-1 border border-stroke-subtle px-1.5 py-1 md:flex"
+            aria-label="Primary"
+          >
+            <a
+              href="#engineer"
+              className="nav-pill px-3.5 py-1.5 text-sm text-fg-secondary transition-colors hover:bg-deep hover:text-fg"
+            >
+              Approach
+            </a>
+            <a
+              href="#work"
+              className="nav-pill px-3.5 py-1.5 text-sm text-fg-secondary transition-colors hover:bg-deep hover:text-fg"
+            >
+              Process
+            </a>
+            <a
+              href="#contact"
+              className="nav-pill px-3.5 py-1.5 text-sm text-fg-secondary transition-colors hover:bg-deep hover:text-fg"
+            >
               Contact
             </a>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">
-              Hire us
-            </a>
-          </div>
+          </nav>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">
+            Hire us
+          </a>
         </div>
       </header>
 
       <main id="main" tabIndex={-1} className="focus:outline-none">
-        <section className="px-5 py-20 sm:px-8 sm:py-24">
-          <div className="mx-auto grid w-full max-w-content gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-            <div className="space-y-8">
-              <p className="mono-label text-fg-muted">For teams where downtime is a revenue event</p>
-              <h1 className="max-w-[18ch] font-display text-[2.25rem] font-bold leading-[1.02] tracking-tight text-fg sm:text-6xl lg:text-7xl">
-                We build systems that <span className="text-accent">stay up</span> under load, failure, and attack.
-              </h1>
-              <p className="max-w-[56ch] text-lg leading-8 text-fg-secondary">
-                We design and build secure, high-availability software that holds when load spikes, a dependency fails,
-                or someone goes looking for a way in.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">
-                  Hire us
-                </a>
-                <a href="#contact" className="btn btn-ghost">
-                  Send a brief
-                </a>
+        <section className="px-5 pb-14 pt-16 sm:px-8 sm:pb-16 sm:pt-20">
+          <div className="mx-auto w-full max-w-content">
+            <p className="mono-label text-fg-muted">For teams where downtime is a revenue event</p>
+            <h1 className="mt-9 max-w-[19ch] text-balance font-display text-[clamp(2.75rem,6vw,5rem)] font-semibold leading-[1.04] tracking-tight text-fg">
+              We build systems that <span className="marker">stay up</span> under load, failure, and attack.
+            </h1>
+            <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_0.78fr] lg:items-start">
+              <div>
+                <p className="max-w-[50ch] text-lg leading-8 text-fg-secondary">
+                  We design and build secure, high-availability software that holds when load spikes, a dependency
+                  fails, or someone goes looking for a way in.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">
+                    Hire us
+                  </a>
+                  <a href="#contact" className="btn btn-ghost">
+                    Send a brief
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <aside aria-labelledby="fit-title" className="panel rounded-control p-8">
-              <p className="mono-label text-fg-muted">Where we fit</p>
-              <h2 id="fit-title" className="mt-3 font-display text-xl font-semibold tracking-tight text-fg">
-                We&rsquo;re a fit when you&rsquo;re
-              </h2>
-              <ul className="mt-6 divide-y divide-stroke-subtle border-t border-stroke-subtle">
-                {fitSignals.map((signal) => (
-                  <li key={signal} className="py-4 leading-7 text-fg-secondary">
-                    {signal}
-                  </li>
-                ))}
-              </ul>
-            </aside>
+              <aside aria-labelledby="fit-title" className="panel rounded-card p-7">
+                <p className="mono-label text-fg-muted">Where we fit</p>
+                <h2 id="fit-title" className="mt-3 font-display text-2xl font-semibold tracking-tight text-fg">
+                  We&rsquo;re a fit when you&rsquo;re
+                </h2>
+                <ul className="mt-5 divide-y divide-stroke-subtle border-t border-stroke-subtle">
+                  {fitSignals.map((signal) => (
+                    <li key={signal} className="py-3.5 text-[0.95rem] leading-7 text-fg-secondary">
+                      {signal}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </div>
           </div>
         </section>
 
-        <section className="border-y border-stroke-subtle bg-deep px-5 py-20 sm:px-8 sm:py-28">
+        <section aria-label="What we are built for" className="px-5 py-16 sm:px-8 sm:py-20">
+          <div className="mx-auto w-full max-w-content">
+            <p className="mx-auto max-w-[26ch] text-center font-display text-2xl font-semibold leading-snug tracking-tight text-fg sm:text-3xl">
+              We build for the day everything goes wrong at once.
+            </p>
+          </div>
+        </section>
+
+        <section id="engineer" className="border-y border-stroke-subtle bg-deep px-5 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto w-full max-w-content">
             <SectionMark index="01" label="How we engineer" />
-            <h2 className="mt-6 max-w-[22ch] font-display text-3xl font-bold tracking-tight text-fg sm:text-5xl">
-              Reliability and security are architecture, not a final pass.
+            <h2 className="mt-7 max-w-[20ch] font-display text-4xl font-semibold leading-[1.05] tracking-tight text-fg sm:text-5xl">
+              Reliability and security are <span className="marker">architecture</span>, not a final pass.
             </h2>
-            <p className="mt-5 max-w-[64ch] text-lg leading-8 text-fg-secondary">
+            <p className="mt-6 max-w-[60ch] text-lg leading-8 text-fg-secondary">
               The failures that take a system down in production are rarely new. They&rsquo;re the ones no one designed
               for. We design for them first.
             </p>
             <dl className="mt-12 divide-y divide-stroke-subtle border-y border-stroke-subtle">
               {deliveryPrinciples.map((item) => (
-                <BriefingRow key={item.term} term={item.term}>
-                  {item.detail}
-                </BriefingRow>
+                <div
+                  key={item.term}
+                  className="grid gap-2 py-7 md:grid-cols-[18rem_1fr] md:items-baseline md:gap-12"
+                >
+                  <dt className="font-display text-xl font-semibold tracking-tight text-fg">{item.term}</dt>
+                  <dd className="max-w-[60ch] leading-8 text-fg-secondary">{item.detail}</dd>
+                </div>
               ))}
             </dl>
           </div>
         </section>
 
-        <section className="px-5 py-20 sm:px-8 sm:py-28">
+        <section id="work" className="px-5 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto w-full max-w-content">
             <SectionMark index="02" label="How we work" />
-            <h2 className="mt-6 max-w-[20ch] font-display text-3xl font-bold tracking-tight text-fg sm:text-5xl">
-              We change running systems without taking them down.
+            <h2 className="mt-7 max-w-[22ch] font-display text-4xl font-semibold leading-[1.05] tracking-tight text-fg sm:text-5xl">
+              We change running systems <span className="marker">without taking them down</span>.
             </h2>
-            <p className="mt-5 max-w-[64ch] text-lg leading-8 text-fg-secondary">
+            <p className="mt-6 max-w-[62ch] text-lg leading-8 text-fg-secondary">
               Most of our work is the same shape: a system that has to keep serving traffic while we re-architect it
               underneath.
             </p>
-            <dl className="mt-12 divide-y divide-stroke-subtle border-y border-stroke-subtle">
-              {workSteps.map((item) => (
-                <BriefingRow key={item.term} term={item.term}>
-                  {item.detail}
-                </BriefingRow>
+            <ol className="mt-12 border-b border-stroke-subtle">
+              {workSteps.map((item, index) => (
+                <li
+                  key={item.term}
+                  className="grid gap-3 border-t border-stroke-subtle py-7 md:grid-cols-[4rem_15rem_1fr] md:items-baseline md:gap-10"
+                >
+                  <span className="font-display text-3xl font-semibold leading-none text-fg-muted">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display text-xl font-semibold tracking-tight text-fg">{item.term}</h3>
+                  <p className="max-w-[58ch] leading-8 text-fg-secondary">{item.detail}</p>
+                </li>
               ))}
-            </dl>
+            </ol>
           </div>
         </section>
 
-        <section id="contact" className="border-t border-stroke-subtle bg-deep px-5 py-20 sm:px-8 sm:py-32">
-          <div className="mx-auto grid w-full max-w-content gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="space-y-6">
+        <section id="contact" className="border-t border-stroke-subtle bg-deep px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto grid w-full max-w-content gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div>
               <SectionMark index="03" label="Contact" />
-              <h2 className="max-w-[16ch] font-display text-4xl font-bold leading-[1.0] tracking-tight text-fg sm:text-6xl">
-                Tell us what can&rsquo;t go down.
+              <h2 className="mt-7 max-w-[14ch] font-display text-4xl font-semibold leading-[1.02] tracking-tight text-fg sm:text-6xl">
+                Tell us <span className="marker">what can&rsquo;t go down</span>.
               </h2>
-              <p className="max-w-[44ch] text-lg leading-8 text-fg-secondary">
+              <p className="mt-6 max-w-[44ch] text-lg leading-8 text-fg-secondary">
                 We take on a small number of engagements at a time. Tell us what you&rsquo;re building, where the risk
                 is, and the timeline you&rsquo;re working against &mdash; or email us directly at{" "}
-                <a className="font-medium text-accent hover:text-accent-soft" href={`mailto:${CONTACT_EMAIL}`}>
+                <a className="link-accent" href={`mailto:${CONTACT_EMAIL}`}>
                   {CONTACT_EMAIL}
                 </a>
                 .
@@ -359,7 +392,10 @@ export default function SundaeSite() {
           <p className="max-w-[40ch] text-sm leading-6 text-fg-muted">
             Senior engineering for the systems a business runs on.
           </p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="mono-label text-fg-muted transition-colors hover:text-accent">
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="mono-label text-fg-muted transition-colors hover:text-accent-ink"
+          >
             {CONTACT_EMAIL}
           </a>
         </div>
