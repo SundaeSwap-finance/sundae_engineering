@@ -6,19 +6,19 @@ const fitSignals = [
   "Re-architecting a system that has outgrown its first design",
   "Hardening a product ahead of an enterprise security review",
   "Adding observability after silent failures in production",
-  "Shipping faster without lowering the quality bar",
+  "Shipping faster while holding the quality bar",
 ];
 
 const deliveryPrinciples = [
   {
     term: "Resilience by design",
     detail:
-      "Redundancy, observability, and graceful degradation are scoped on day one — not retrofitted after the first outage.",
+      "Redundancy, observability, and graceful degradation are scoped on day one and built into the first release.",
   },
   {
-    term: "Security in the build, not the review",
+    term: "Security built into delivery",
     detail:
-      "Access boundaries, audit trails, and threat modeling are part of implementation — not a compliance pass bolted on before launch.",
+      "Access boundaries, audit trails, and threat modeling are part of implementation, so security ships with every feature.",
   },
   {
     term: "AI with a human accountable",
@@ -41,7 +41,7 @@ const workSteps = [
   {
     term: "Leave it measurable",
     detail:
-      "You keep the instrumentation, runbooks, and tests to watch the system and catch the next regression yourselves — not a standing dependency on us.",
+      "You keep the instrumentation, runbooks, and tests to watch the system and catch the next regression yourselves. The system stays yours to run.",
   },
 ];
 
@@ -103,11 +103,11 @@ function ContactForm() {
         <span className="status-dot" aria-hidden="true" />
         <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-fg">Brief received.</h3>
         <p className="mt-3 max-w-[46ch] leading-7 text-fg-secondary">
-          We&rsquo;ve got it. You&rsquo;ll hear back from a person at{" "}
+          We&rsquo;ve got it. You&rsquo;ll hear back from a real person at{" "}
           <a className="link-accent" href={`mailto:${CONTACT_EMAIL}`}>
             {CONTACT_EMAIL}
           </a>
-          , not an autoresponder &mdash; and you can reach us there directly any time.
+          . You can reach us there directly any time.
         </p>
       </div>
     );
@@ -265,7 +265,7 @@ export default function SundaeSite() {
       <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="px-5 pb-14 pt-16 sm:px-8 sm:pb-16 sm:pt-20">
           <div className="mx-auto w-full max-w-content">
-            <p className="mono-label text-fg-muted">For teams where downtime is a revenue event</p>
+            <p className="mono-label text-fg-muted">For teams where uptime is revenue</p>
             <h1 className="mt-9 max-w-[19ch] text-balance font-display text-[clamp(2.75rem,6vw,5rem)] font-semibold leading-[1.04] tracking-tight text-fg">
               We build systems that <span className="marker">stay up</span> under load, failure, and attack.
             </h1>
@@ -305,7 +305,7 @@ export default function SundaeSite() {
         <section aria-label="What we are built for" className="px-5 py-16 sm:px-8 sm:py-20">
           <div className="mx-auto w-full max-w-content">
             <p className="mx-auto max-w-[26ch] text-center font-display text-2xl font-semibold leading-snug tracking-tight text-fg sm:text-3xl">
-              We build for the day everything goes wrong at once.
+              We build for the day it all has to hold.
             </p>
           </div>
         </section>
@@ -314,11 +314,11 @@ export default function SundaeSite() {
           <div className="mx-auto w-full max-w-content">
             <SectionMark index="01" label="How we engineer" />
             <h2 className="mt-7 max-w-[20ch] font-display text-4xl font-semibold leading-[1.05] tracking-tight text-fg sm:text-5xl">
-              Reliability and security are <span className="marker">architecture</span>, not a final pass.
+              Reliability and security are <span className="marker">architecture</span>, set on day one.
             </h2>
             <p className="mt-6 max-w-[60ch] text-lg leading-8 text-fg-secondary">
-              The failures that take a system down in production are rarely new. They&rsquo;re the ones no one designed
-              for. We design for them first.
+              We design for the conditions a system meets in production: peak traffic, a strained dependency, an
+              untested path. Yours holds when they arrive.
             </p>
             <dl className="mt-12 divide-y divide-stroke-subtle border-y border-stroke-subtle">
               {deliveryPrinciples.map((item) => (
@@ -338,7 +338,7 @@ export default function SundaeSite() {
           <div className="mx-auto w-full max-w-content">
             <SectionMark index="02" label="How we work" />
             <h2 className="mt-7 max-w-[22ch] font-display text-4xl font-semibold leading-[1.05] tracking-tight text-fg sm:text-5xl">
-              We change running systems <span className="marker">without taking them down</span>.
+              We rebuild running systems <span className="marker">while they stay live</span>.
             </h2>
             <p className="mt-6 max-w-[62ch] text-lg leading-8 text-fg-secondary">
               Most of our work is the same shape: a system that has to keep serving traffic while we re-architect it
@@ -366,11 +366,11 @@ export default function SundaeSite() {
             <div>
               <SectionMark index="03" label="Contact" />
               <h2 className="mt-7 max-w-[14ch] font-display text-4xl font-semibold leading-[1.02] tracking-tight text-fg sm:text-6xl">
-                Tell us <span className="marker">what can&rsquo;t go down</span>.
+                Tell us <span className="marker">what has to stay up</span>.
               </h2>
               <p className="mt-6 max-w-[44ch] text-lg leading-8 text-fg-secondary">
                 We take on a small number of engagements at a time. Tell us what you&rsquo;re building, where the risk
-                is, and the timeline you&rsquo;re working against &mdash; or email us directly at{" "}
+                is, and the timeline you&rsquo;re working against. Or email us directly at{" "}
                 <a className="link-accent" href={`mailto:${CONTACT_EMAIL}`}>
                   {CONTACT_EMAIL}
                 </a>
