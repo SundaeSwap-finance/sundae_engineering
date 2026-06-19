@@ -129,11 +129,11 @@ The palette is a disciplined dark-spectrum system with a single warm accent rese
 
 ## 3. Typography
 
-**Display Font:** Barlow Condensed (fallback to Barlow, then Segoe UI sans-serif)
+**Display Font:** Barlow Condensed (fallback to Barlow, then Segoe UI sans-serif), set in **sentence case** — 700 for the hero H1 and numbered section titles, 600 for supporting display text.
 **Body Font:** Barlow (fallback to Segoe UI sans-serif)
-**Label/Mono Font:** Barlow labels in uppercase tracking, no separate mono family
+**Metadata/Mono Font:** IBM Plex Mono — reserved for *genuine* metadata only: section indices (`01 / …`), the availability status, and eyebrow labels. Never used for decorative buzzwords or faux-terminal strings.
 
-**Character:** Condensed display cuts deliver serious, finance-adjacent authority. Body typography remains straightforward and readable under dense technical messaging.
+**Character:** Condensed display cuts deliver serious, finance-adjacent authority. Body typography remains straightforward and readable under dense technical messaging. The mono tier is what earns the technical register — by labelling real structure, not by costume.
 
 ### Hierarchy
 - **Display** (600, clamp(3rem, 6.5vw, 4.5rem), 0.95): Hero statements and high-importance section headlines.
@@ -144,6 +144,8 @@ The palette is a disciplined dark-spectrum system with a single warm accent rese
 
 ### Named Rules
 **The Technical Readability Rule.** Long-form copy stays at body scale with generous line height and constrained measure, even in dark mode contexts.
+
+**The Two-Step Display Rule.** Display headings are sentence case so condensed weight carries authority without shouting. Uppercase + wide tracking is reserved exclusively for the mono metadata tier. When every heading shouts, nothing is emphasized — hierarchy comes from size and weight (700 vs 600), not blanket capitalization.
 
 ## 4. Elevation
 
