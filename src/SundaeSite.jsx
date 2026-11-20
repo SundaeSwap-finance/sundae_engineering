@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import SectionMark from "./components/SectionMark.jsx";
+import ProductsSection from "./sections/ProductsSection.jsx";
 
 const CONTACT_EMAIL = "hello@sundae.engineering";
 
@@ -47,15 +49,6 @@ const workSteps = [
 
 function Mark({ className = "" }) {
   return <img src="/sundae-mark.svg" alt="" aria-hidden="true" className={className} />;
-}
-
-function SectionMark({ index, label }) {
-  return (
-    <div className="flex items-baseline gap-4">
-      <span className="font-display text-2xl font-semibold leading-none text-accent-ink">{index}</span>
-      <span className="mono-label text-fg-muted">{label}</span>
-    </div>
-  );
 }
 
 function encodeForm(data) {
@@ -250,6 +243,12 @@ export default function SundaeSite() {
               Process
             </a>
             <a
+              href="#products"
+              className="nav-pill px-3.5 py-1.5 text-sm text-fg-secondary transition-colors hover:bg-deep hover:text-fg"
+            >
+              Tools
+            </a>
+            <a
               href="#contact"
               className="nav-pill px-3.5 py-1.5 text-sm text-fg-secondary transition-colors hover:bg-deep hover:text-fg"
             >
@@ -361,10 +360,12 @@ export default function SundaeSite() {
           </div>
         </section>
 
+        <ProductsSection />
+
         <section id="contact" className="border-t border-stroke-subtle bg-deep px-5 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto grid w-full max-w-content gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div>
-              <SectionMark index="03" label="Contact" />
+              <SectionMark index="04" label="Contact" />
               <h2 className="mt-7 max-w-[14ch] font-display text-4xl font-semibold leading-[1.02] tracking-tight text-fg sm:text-6xl">
                 Tell us <span className="marker">what has to stay up</span>.
               </h2>
