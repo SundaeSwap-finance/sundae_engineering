@@ -152,6 +152,13 @@ body {
     box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 32%, white);
   }
 
+  .scroll-track {
+    scrollbar-width: none;
+  }
+  .scroll-track::-webkit-scrollbar {
+    display: none;
+  }
+
   .status-dot {
     display: inline-block;
     width: 6px;

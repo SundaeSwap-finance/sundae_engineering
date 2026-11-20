@@ -1,61 +1,60 @@
 import React, { useEffect, useRef, useState } from "react";
+import SectionMark from "./components/SectionMark.jsx";
+import ProductsSection from "./sections/ProductsSection.jsx";
 
 const CONTACT_EMAIL = "hello@sundae.engineering";
 
 const fitSignals = [
-  "Re-architecting a system that has outgrown its first design",
-  "Hardening a product ahead of an enterprise security review",
-  "Adding observability after silent failures in production",
-  "Shipping faster while holding the quality bar",
+  "Rolling coding agents out to the whole team",
+  "Moving agents off laptops and onto machines you manage",
+  "Watching every engineer run agents their own way",
+  "Heading into a security review that will ask about agents",
+  "Getting more agent pull requests than your reviewers can keep up with",
 ];
 
 const deliveryPrinciples = [
   {
-    term: "Resilience by design",
+    term: "Every agent has an owner",
     detail:
-      "Redundancy, observability, and graceful degradation are scoped on day one and built into the first release.",
+      "One person directs each agent and answers for what it produces. Teammates can see the work and pitch in, and the owner decides what the agent hears.",
   },
   {
-    term: "Security built into delivery",
+    term: "Agents touch only what they need",
     detail:
-      "Access boundaries, audit trails, and threat modeling are part of implementation, so security ships with every feature.",
+      "Agents run on machines you manage, with the files and credentials for the task at hand. The keys on a developer's laptop stay on the laptop.",
   },
   {
-    term: "AI with a human accountable",
+    term: "You can see what happened",
     detail:
-      "We use AI to move faster, under the same review, test, and sign-off standards as everything else we ship. A person owns every line.",
+      "Every run leaves a record of who directed it, where it ran, and what it did. When someone asks, you have the answer.",
+  },
+  {
+    term: "Someone can always step in",
+    detail:
+      "We decide up front what happens when a model times out or the owner is out sick. Someone can always review the work, take it over, or stop it.",
   },
 ];
 
 const workSteps = [
   {
-    term: "Find the failure modes",
+    term: "Start with one team",
     detail:
-      "Before we change anything, we map where the system breaks: single points of failure, silent errors, and the load it has never been tested against.",
+      "Pick one team, one repo, and a task that matters. We look at where agents already run, what they can reach, and who signs off on their work.",
   },
   {
-    term: "Change it under load",
+    term: "Build it on live work",
     detail:
-      "We work in small, reversible steps behind redundancy and observability, so the system keeps serving traffic the entire time it is being rebuilt.",
+      "We set up the machines, the access rules, the review steps, and the handoffs alongside your engineers, and prove each one on real tickets.",
   },
   {
-    term: "Leave it measurable",
+    term: "Leave it yours to run",
     detail:
-      "You keep the instrumentation, runbooks, and tests to watch the system and catch the next regression yourselves. The system stays yours to run.",
+      "When we leave, your engineers have the environments, the rules, and the runbooks to bring the next team on themselves.",
   },
 ];
 
 function Mark({ className = "" }) {
   return <img src="/sundae-mark.svg" alt="" aria-hidden="true" className={className} />;
-}
-
-function SectionMark({ index, label }) {
-  return (
-    <div className="flex items-baseline gap-4">
-      <span className="font-display text-2xl font-semibold leading-none text-accent-ink">{index}</span>
-      <span className="mono-label text-fg-muted">{label}</span>
-    </div>
-  );
 }
 
 function encodeForm(data) {
@@ -172,7 +171,7 @@ function ContactForm() {
           className="field-input resize-y"
         />
         <span id="message-hint" className="text-sm leading-6 text-fg-muted">
-          What the system does, where the risk is, and the timeline you are working against.
+          A few sentences is plenty. We&rsquo;ll ask the rest on a call.
         </span>
       </label>
 
@@ -250,6 +249,12 @@ export default function SundaeSite() {
               Process
             </a>
             <a
+              href="#products"
+              className="nav-pill px-3.5 py-1.5 text-sm text-fg-secondary transition-colors hover:bg-deep hover:text-fg"
+            >
+              Tools
+            </a>
+            <a
               href="#contact"
               className="nav-pill px-3.5 py-1.5 text-sm text-fg-secondary transition-colors hover:bg-deep hover:text-fg"
             >
@@ -265,15 +270,16 @@ export default function SundaeSite() {
       <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="px-5 pb-14 pt-16 sm:px-8 sm:pb-16 sm:pt-20">
           <div className="mx-auto w-full max-w-content">
-            <p className="mono-label text-fg-muted">For teams where uptime is revenue</p>
+            <p className="mono-label text-fg-muted">Hands-on help for teams adopting agents</p>
             <h1 className="mt-9 max-w-[19ch] text-balance font-display text-[clamp(2.75rem,6vw,5rem)] font-semibold leading-[1.04] tracking-tight text-fg">
-              We build systems that <span className="marker">stay up</span> under load, failure, and attack.
+              We build the systems where agents and people <span className="marker">work together</span>.
             </h1>
             <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_0.78fr] lg:items-start">
               <div>
                 <p className="max-w-[50ch] text-lg leading-8 text-fg-secondary">
-                  We design and build secure, high-availability software that holds when load spikes, a dependency
-                  fails, or someone goes looking for a way in.
+                  Your engineers are already running agents on their laptops, with access to everything on them. We
+                  work alongside them to set it up properly: agents on machines you manage, one person answering for
+                  each piece of work, and a record of what got done.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">
@@ -302,10 +308,10 @@ export default function SundaeSite() {
           </div>
         </section>
 
-        <section aria-label="What we are built for" className="px-5 py-16 sm:px-8 sm:py-20">
+        <section aria-label="Who answers for the work" className="px-5 py-16 sm:px-8 sm:py-20">
           <div className="mx-auto w-full max-w-content">
             <p className="mx-auto max-w-[26ch] text-center font-display text-2xl font-semibold leading-snug tracking-tight text-fg sm:text-3xl">
-              We build for the day it all has to hold.
+              Agents do more of the work. People still answer for it.
             </p>
           </div>
         </section>
@@ -314,11 +320,11 @@ export default function SundaeSite() {
           <div className="mx-auto w-full max-w-content">
             <SectionMark index="01" label="How we engineer" />
             <h2 className="mt-7 max-w-[20ch] font-display text-4xl font-semibold leading-[1.05] tracking-tight text-fg sm:text-5xl">
-              Reliability and security are <span className="marker">architecture</span>, set on day one.
+              An agent is only as good as <span className="marker">the system around it</span>.
             </h2>
             <p className="mt-6 max-w-[60ch] text-lg leading-8 text-fg-secondary">
-              We design for the conditions a system meets in production: peak traffic, a strained dependency, an
-              untested path. Yours holds when they arrive.
+              Everyone has the same models. The teams getting the most out of them have sorted out four things. We
+              work them out with your team.
             </p>
             <dl className="mt-12 divide-y divide-stroke-subtle border-y border-stroke-subtle">
               {deliveryPrinciples.map((item) => (
@@ -338,11 +344,10 @@ export default function SundaeSite() {
           <div className="mx-auto w-full max-w-content">
             <SectionMark index="02" label="How we work" />
             <h2 className="mt-7 max-w-[22ch] font-display text-4xl font-semibold leading-[1.05] tracking-tight text-fg sm:text-5xl">
-              We rebuild running systems <span className="marker">while they stay live</span>.
+              We work <span className="marker">inside your team</span>, on real work.
             </h2>
             <p className="mt-6 max-w-[62ch] text-lg leading-8 text-fg-secondary">
-              Most of our work is the same shape: a system that has to keep serving traffic while we re-architect it
-              underneath.
+              From the first week we&rsquo;re working next to your engineers, on the tickets they already have.
             </p>
             <ol className="mt-12 border-b border-stroke-subtle">
               {workSteps.map((item, index) => (
@@ -361,16 +366,18 @@ export default function SundaeSite() {
           </div>
         </section>
 
+        <ProductsSection />
+
         <section id="contact" className="border-t border-stroke-subtle bg-deep px-5 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto grid w-full max-w-content gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div>
-              <SectionMark index="03" label="Contact" />
+              <SectionMark index="04" label="Contact" />
               <h2 className="mt-7 max-w-[14ch] font-display text-4xl font-semibold leading-[1.02] tracking-tight text-fg sm:text-6xl">
-                Tell us <span className="marker">what has to stay up</span>.
+                Tell us what you want <span className="marker">agents to take on</span>.
               </h2>
               <p className="mt-6 max-w-[44ch] text-lg leading-8 text-fg-secondary">
-                We take on a small number of engagements at a time. Tell us what you&rsquo;re building, where the risk
-                is, and the timeline you&rsquo;re working against. Or email us directly at{" "}
+                We work with a few teams at a time. Tell us what your team builds, where agents already fit in, and
+                what you&rsquo;d like them doing six months from now. Or email us directly at{" "}
                 <a className="link-accent" href={`mailto:${CONTACT_EMAIL}`}>
                   {CONTACT_EMAIL}
                 </a>
@@ -390,7 +397,7 @@ export default function SundaeSite() {
             <span className="font-display text-base font-semibold tracking-tight text-fg">Sundae Engineering</span>
           </div>
           <p className="max-w-[40ch] text-sm leading-6 text-fg-muted">
-            Senior engineering for the systems a business runs on.
+            We get engineering teams shipping with agents.
           </p>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
